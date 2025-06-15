@@ -46,27 +46,35 @@
 1. Wasserstein距离
 
     用户和物品分别表示为高斯分布：
+   
         ![Gaussian](asset/gaussian.png)
+   
     采用Wasserstein距离衡量用户-物品偏好：
+   
         ![Wasserstein](asset/Wasserstein.png)
+   
 
-2. 自适应边距（Margin）生成
+3. 自适应边距（Margin）生成
 
     将边距生成建模为双层优化问题：
     - 内层优化：固定边距参数，优化模型参数；
     - 外层优化：固定模型参数，优化边距生成函数。
 
     边距生成函数通过神经网络实现，输入为三元组的嵌入差异，输出为动态边距。采用如下损失函数进行训练：
+   
         ![loss function](asset/loss.png)
+   
 
-3. 用户-用户与物品-物品关系
+5. 用户-用户与物品-物品关系
    
    通过余弦相似度筛选相似用户/物品，并引入边距排名损失，迫使相似用户或物品在隐空间中更接近。
    
    其中用户-用户相似损失为：
+   
         ![user2user](asset/user2user.png)
     
     物品-物品相似损失为：
+   
         ![item2item](asset/item2item.png)
 
 ### 模型训练与评估
