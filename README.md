@@ -43,6 +43,10 @@
 
 ### 研究方法
 
+模型的整体框图见下：
+
+![model](asset/model.png)
+
 1. Wasserstein距离
 
     用户和物品分别表示为高斯分布：
